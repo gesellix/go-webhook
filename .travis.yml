@@ -3,5 +3,6 @@ go:
   - 1.6
   - tip
 install:
+  - go get ./...
   - go get github.com/campoy/jsonenums
   - PATH=$GOPATH/bin:$PATH go generate ./...
