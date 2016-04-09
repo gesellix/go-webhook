@@ -1,0 +1,18 @@
+{
+  "tls": {
+    "key": "/path/to/key",
+    "cert": "/path/to/cert"
+  },
+  "handlers": [
+    {
+      "path": "/docker-hub",
+      "type": "DockerHub",
+      "apikey": "a.secret.key"
+    },
+    {
+      "path": "/drone",
+      "type": "Drone",
+      "apikey": "another.secret.key"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "project.deploy",
+  "docker": {
+    "images": [
+      {
+        "tag": "$$BUILD_NUMBER-$$COMMIT"
+      }
+    ]
+  },
+  "extra_vars": {
+    "env": "dev",
+    "git_branch": "{{ build.branch }}",
+    "another_token": "$$ANOTHER_TOKEN"
+  }
+}

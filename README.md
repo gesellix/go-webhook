@@ -1,3 +1,3 @@
 # go-webhook
-A Webhook Consumer in Golang
-  
+
+A more or less generic Webhook Consumer in Golang
