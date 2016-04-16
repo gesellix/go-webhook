@@ -4,6 +4,7 @@ go:
   - tip
 install:
   - go get -d ./...
-#  - go get -t -u -v golang.org/x/tools/go/exact
-  - go get github.com/campoy/jsonenums
+# see https://github.com/campoy/jsonenums/pull/11
+  - go get github.com/thought-machine/jsonenums
+#  - go get github.com/campoy/jsonenums
   - PATH=$GOPATH/bin:$PATH go generate ./...
