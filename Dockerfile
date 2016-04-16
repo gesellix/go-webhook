@@ -7,9 +7,8 @@ ENV APPPATH $GOPATH/src/github.com/gesellix/go-webhook
 COPY . $APPPATH
 
 RUN apk add --update -t build-deps go git mercurial libc-dev gcc libgcc \
-    && cd $APPPATH && go get -d && go build -o /bin/go-webhook \
-    && apk del --purge build-deps && rm -rf $GOPATH \
-    && chmod 755 /bin/go-webhook
+    && cd $APPPATH && go get -d && go build -o /bin/go-webhook cli/cli.go \
+    && apk del --purge build-deps && rm -rf $GOPATH
 
 ENTRYPOINT [ "/bin/go-webhook" ]
 CMD [ "" ]
