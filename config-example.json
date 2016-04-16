@@ -12,7 +12,12 @@
     {
       "path": "/drone",
       "type": "Drone",
-      "apikey": "another.secret.key"
+      "apikey": "another.secret.key",
+      "actions": [
+        {
+          "command": "/reload.sh"
+        }
+      ]
     }
   ]
 }

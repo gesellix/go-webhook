@@ -3,6 +3,7 @@
   "docker": {
     "images": [
       {
+        "repo_name": "repo/name",
         "tag": "$$BUILD_NUMBER-$$COMMIT"
       }
     ]

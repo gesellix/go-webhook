@@ -57,10 +57,10 @@ func newHandler(h webhook.Handler) {
 
 	switch h.Type {
 	case webhook.DockerHub:
-		httpHandler = dockerhub.NewHandler()
+		httpHandler = dockerhub.NewHandler(h.Actions)
 		break
 	case webhook.Drone:
-		httpHandler = drone.NewHandler()
+		httpHandler = drone.NewHandler(h.Actions)
 		break
 	}
 

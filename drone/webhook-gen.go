@@ -3,7 +3,8 @@ package drone
 type Drone struct {
 	Docker struct {
 		Images []struct {
-			Tag string `json:"tag"`
+			RepoName string `json:"repo_name"`
+			Tag      string `json:"tag"`
 		} `json:"images"`
 	} `json:"docker"`
 	ExtraVars struct {

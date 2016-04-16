@@ -3,6 +3,7 @@ package dockerhub
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/gesellix/go-webhook"
 	"io"
 	"io/ioutil"
 	"log"
@@ -11,7 +12,7 @@ import (
 
 //go:generate gojson -input example.json -o webhook-gen.go -pkg dockerhub -name DockerHub
 
-func NewHandler() func(w http.ResponseWriter, r *http.Request) {
+func NewHandler(actions []webhook.Action) func(w http.ResponseWriter, r *http.Request) {
 	httpHandler := func(w http.ResponseWriter, r *http.Request) {
 
 		body, err := ioutil.ReadAll(io.LimitReader(r.Body, 1048576))

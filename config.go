@@ -18,10 +18,15 @@ type Tls struct {
 	Cert string `json:"cert,omitempty"`
 }
 
+type Action struct {
+	Command string `json:"command,omitempty"`
+}
+
 type Handler struct {
-	Path   string      `json:"path"`
-	Type   MessageType `json:"type"`
-	ApiKey string      `json:"apikey,omitempty"`
+	Path    string      `json:"path"`
+	Type    MessageType `json:"type"`
+	ApiKey  string      `json:"apikey,omitempty"`
+	Actions []Action    `json:"actions,omitempty"`
 }
 
 type Config struct {
