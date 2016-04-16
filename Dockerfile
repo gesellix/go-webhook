@@ -11,4 +11,4 @@ RUN apk add --update -t build-deps go git mercurial libc-dev gcc libgcc \
     && apk del --purge build-deps && rm -rf $GOPATH
 
 ENTRYPOINT [ "/bin/go-webhook" ]
-CMD [ "" ]
+CMD [ "-listen-address=0.0.0.0:3003" ]
