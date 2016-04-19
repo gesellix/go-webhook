@@ -5,7 +5,5 @@ go:
 install:
   - go get -d ./...
   - go get github.com/ChimeraCoder/gojson/gojson
-# see https://github.com/campoy/jsonenums/pull/11
-  - go get github.com/thought-machine/jsonenums
-#  - go get github.com/campoy/jsonenums
+  - go get github.com/campoy/jsonenums
   - PATH=$GOPATH/bin:$PATH go generate ./...
