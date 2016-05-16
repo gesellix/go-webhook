@@ -9,10 +9,10 @@ func Call(c string, repo string, tag string) error {
 	log.Println("reload in progress...")
 	out, err := exec.Command(c, repo, tag).Output()
 	if err != nil {
-		log.Println("reload error!")
 		if out != nil {
 			log.Println(string(out))
 		}
+		log.Println("reload error!")
 		log.Println(err)
 		return err
 	}

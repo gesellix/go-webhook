@@ -31,10 +31,12 @@ func NewHandler(a []webhook.Action) func(w http.ResponseWriter, r *http.Request)
 		} else {
 			log.Printf("got webhook message %v", message)
 
-			for _, action := range a {
-				if action.Command != "" {
-					log.Printf("going to call %q with %q:%q", action.Command, message.Docker.Images[0].RepoName, message.Docker.Images[0].Tag)
-					actions.Call(action.Command, message.Docker.Images[0].RepoName, message.Docker.Images[0].Tag)
+			for _, image := range message.Docker.Images {
+				for _, action := range a {
+					if action.Command != "" {
+						log.Printf("going to call %q with %q:%q", action.Command, image.RepoName, image.Tag)
+						actions.Call(action.Command, image.RepoName, image.Tag)
+					}
 				}
 			}
 
