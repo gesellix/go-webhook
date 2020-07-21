@@ -4,12 +4,12 @@ type DockerHub struct {
 	CallbackURL string `json:"callback_url"`
 	PushData    struct {
 		Images   []string `json:"images"`
-		PushedAt int      `json:"pushed_at"`
+		PushedAt int64    `json:"pushed_at"`
 		Pusher   string   `json:"pusher"`
 	} `json:"push_data"`
 	Repository struct {
-		CommentCount    int    `json:"comment_count"`
-		DateCreated     int    `json:"date_created"`
+		CommentCount    int64  `json:"comment_count"`
+		DateCreated     int64  `json:"date_created"`
 		Description     string `json:"description"`
 		Dockerfile      string `json:"dockerfile"`
 		FullDescription string `json:"full_description"`
@@ -21,7 +21,7 @@ type DockerHub struct {
 		Owner           string `json:"owner"`
 		RepoName        string `json:"repo_name"`
 		RepoURL         string `json:"repo_url"`
-		StarCount       int    `json:"star_count"`
+		StarCount       int64  `json:"star_count"`
 		Status          string `json:"status"`
 	} `json:"repository"`
 }
